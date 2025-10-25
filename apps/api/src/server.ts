@@ -3,6 +3,11 @@ import cors from '@fastify/cors';
 import sensible from '@fastify/sensible';
 import jwt from '@fastify/jwt';
 import dotenv from 'dotenv';
+import {
+  serializerCompiler,
+  validatorCompiler,
+  ZodTypeProvider,
+} from 'fastify-type-provider-zod';
 import { authRoutes } from './routes/auth/index.js';
 import { usersRoutes } from './routes/users/index.js';
 import { tasksRoutes } from './routes/tasks/index.js';
@@ -26,7 +31,11 @@ const fastify = Fastify({
       },
     },
   },
-});
+}).withTypeProvider<ZodTypeProvider>();
+
+// Set Zod validator and serializer
+fastify.setValidatorCompiler(validatorCompiler);
+fastify.setSerializerCompiler(serializerCompiler);
 
 // Register plugins
 await fastify.register(cors, {
