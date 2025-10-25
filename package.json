@@ -18,7 +18,8 @@
     "db:studio": "turbo run db:studio",
     "clean": "turbo run clean && rm -rf node_modules .turbo",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
-    "setup": "node scripts/setup.js"
+    "setup": "node scripts/setup.js",
+    "kill-port": "node scripts/kill-port.js"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
