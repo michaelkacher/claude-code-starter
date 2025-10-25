@@ -1,0 +1,65 @@
+# Dependencies
+node_modules/
+.pnp/
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+.turbo/
+
+# Testing artifacts
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# Lock files (token-heavy)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Generated files
+*.generated.ts
+*.d.ts.map
+*.js.map
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env*.local
+
+# Cache
+.cache/
+.eslintcache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# Large assets (include specific ones when needed)
+public/images/**
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+!apps/web/public/icons/**
+
+# Database
+*.db
+*.db-journal
+
+# Misc
+.tsbuildinfo
+*.tgz
